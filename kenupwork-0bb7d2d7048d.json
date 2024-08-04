@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "kenupwork",
+  "private_key_id": "0bb7d2d7048de2a9529b7ee2f00cc48940420b8b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDJiq9q1jze59v1\n3ZZ5E8yxWKOIArdRJOlD+aBXtl9ixkvmhIz4+GiDwC/+bKiOzN9nBclgIvQdwwwG\nPTwFK5csiEY1qsuSNeAPDRvMICcOI8O1fWMM/om78SBha9Q1ZTYCuAjSiM4L2HzB\nXJ4TUludINwL2aGNeQ5e+OiEbMo9vQQwST53YZl3mE+2zO6VsAxxcUa1aaGFH8g+\nEdWLKB3aEgEqOwrrZsgFEhA7XxYBNka1hVSb8ofpyAgjmJs5l+agtoPyQHHJ1WaV\nkiNMGcdg9PtkjDIqcSzzo9bI4XUoNhcStGAncgY8mtupCtXUv7WU2y58/PgZsFn5\nSjBBzHN1AgMBAAECggEAK598VRZekgvjCR5nj7j4pQlPyiR2W9aus9MgAOQ9VLKh\nopldrxULgDr02G/Z8yDGmTTAL/IY3ylE3MPbzi2veMjdU4furKzDHNbkRaRO98lH\nduzXJ+yfUOIB9XxCsDUCQgfmBvXsDVXUOQEsSPfaUxIV9u2qAWZqtSVQpLsscjyp\nRFj9fewLC85B58wauDOnTQ3j9m+lJldq5K9k2ZxR1cstKn/+xFh840ii15U3c65x\nT3gUlTfILDTNC3DM84+PElqhBSf3rnNkTEkqS6NSlEMh2uiRaevxny1clhh0wpxg\ncNXhVKLzx+A2zC+ezL7B8l8rJY9HfqAS4gfvaI/h0QKBgQDobYJtCPTuFXIgjusG\nS/CHlLSx3mJ8O4wBzjx54hvoh1A6gCTEOalilsFkI4bAGoGdGzonzjP8cs09+59/\nfY0ViI6AcMXIxED3yw7nNVdrPJ7ursyBvscck+KylWU5ejKhSVDv1rTuchEO1ueW\nx5S724O7firpzhpsjnuNuOq5EQKBgQDd+0kxIG8iKXHdWR+PUf5LjhbY5eM56k+V\nzG51WsQhQMgxQ6wg3u8I2GhyYApqRNu+RcS03haWsK49OTJ3x+POVIrLto4q2Sfw\nc0+D608j1qrb5+XlzbPFvSSdopOqRkgp7Vmi4e4UCTcemQVLDhikD92ONL3VUqeA\nHTs0y8R0JQKBgAZa+DYDCK955qT9Q2/oo6sRZd93NTowZqOmAAFVLW4uRQNUfazf\n5sHLXX5fek/GacTh+bUc7k741KPdPX8+75ynHz5j1wSmWSBtbPrlen50KeRc4zqo\n/MjLQmefriTkMn42gwAL3uamN9EwDyUQUADS/8cgrAu4lwBg5P/7DnABAoGBAIvb\nhcrQ/5QLfrUSMOMwqsJZvKVdeeOEcC4WRkXkMQwub7MySuHO89Wj23KsdgNsbPKd\nrIi0IJFCshTa06RKKYpXE7ezxjDS7un9DM011X/kAXRZ0CwQhUKBn+89fkHa1B6u\nbzpDlKfFAphhmscmE3pSkKnHKw+bavM595KVC6qNAoGBAInr8IVA+o3/v6USD56b\nizP0Ijo+vvHDwX6f7vTIztUD/miLx+ppV29vQ+fbBjFvxzHhDdsz/xQ/gjSc6821\nofpfv77HWk8GGNi6+Kg36+eR6PpbhzmiBTFO84hctmlSJCB4vEfz/y6lI6NxwdOG\nKB9av4r83QpPf5u9mM+6PKpJ\n-----END PRIVATE KEY-----\n",
+  "client_email": "kenupwork@kenupwork.iam.gserviceaccount.com",
+  "client_id": "113232013062199622924",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kenupwork%40kenupwork.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
