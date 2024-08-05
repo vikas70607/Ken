@@ -35,14 +35,10 @@ def connect_to_google_sheets(sheet_name):
         "client_x509_cert_url": st.secrets["client_x509_cert_url"],
         "universe_domain": st.secrets["universe_domain"]
     }
-    
-    # Save the credentials dictionary to a temporary JSON file
-    with open('temp_creds.json', 'w') as temp_file:
-        json.dump(creds_dict, temp_file)
 
     # Set the scope and authorize the credentials
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name('temp_creds.json', scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
     client = gspread.authorize(creds)
     sheet = client.open(sheet_name).sheet1
     return sheet
