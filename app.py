@@ -101,10 +101,8 @@ def display_row_data(sheet, row):
 
 def main():
     st.title("Image Review App")
-
-    json_keyfile = 'kenupwork-0bb7d2d7048d.json'
     sheet_name = 'Ken'
-    sheet = connect_to_google_sheets(json_keyfile, sheet_name)
+    sheet = connect_to_google_sheets(sheet_name)
 
     # Initialize session state if not already set
     if 'active_row' not in st.session_state:
