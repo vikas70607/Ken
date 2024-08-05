@@ -19,12 +19,41 @@ button {
 )
 
 # Function to authenticate and connect to Google Sheets
-def connect_to_google_sheets(json_keyfile, sheet_name):
+import streamlit as st
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+import json
+
+def connect_to_google_sheets(sheet_name):
+    # Load credentials from Streamlit secrets
+    creds_dict = {
+        "type": st.secrets["type"],
+        "project_id": st.secrets["project_id"],
+        "private_key_id": st.secrets["private_key_id"],
+        "private_key": st.secrets["private_key"].replace("\\n", "\n"),
+        "client_email": st.secrets["client_email"],
+        "client_id": st.secrets["client_id"],
+        "auth_uri": st.secrets["auth_uri"],
+        "token_uri": st.secrets["token_uri"],
+        "auth_provider_x509_cert_url": st.secrets["auth_provider_x509_cert_url"],
+        "client_x509_cert_url": st.secrets["client_x509_cert_url"],
+        "universe_domain": st.secrets["universe_domain"]
+    }
+    
+    # Save the credentials dictionary to a temporary JSON file
+    with open('temp_creds.json', 'w') as temp_file:
+        json.dump(creds_dict, temp_file)
+
+    # Set the scope and authorize the credentials
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = ServiceAccountCredentials.from_json_keyfile_name(json_keyfile, scope)
+    creds = ServiceAccountCredentials.from_json_keyfile_name('temp_creds.json', scope)
     client = gspread.authorize(creds)
     sheet = client.open(sheet_name).sheet1
     return sheet
+
+# Example usage
+sheet = connect_to_google_sheets("Your Google Sheet Name")
+
 
 # Function to get the next active row
 def get_next_active_row(sheet, current_row):
