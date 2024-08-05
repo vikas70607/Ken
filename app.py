@@ -67,6 +67,7 @@ def display_row_data(sheet, row):
                     sheet.update_cell(row, 9, review_notes)
                     sheet.update_cell(row, 7, f'image_url_{i + 1}')
                     st.session_state.active_row = get_next_active_row(sheet, row)
+                    st.session_state.review_notes = ""
                     if st.session_state.active_row is None:
                         st.session_state.no_records = True
                     st.rerun()
@@ -88,6 +89,7 @@ def display_row_data(sheet, row):
             sheet.update_cell(row, 8, "REJECTED")
             sheet.update_cell(row, 9, review_notes)
             st.session_state.active_row = get_next_active_row(sheet, row)
+            st.session_state.review_notes = ""
             if st.session_state.active_row is None:
                 st.session_state.no_records = True
             st.rerun()
