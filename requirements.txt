@@ -72,6 +72,7 @@ streamlit-embedcode==0.1.2
 streamlit-extras==0.4.3
 streamlit-faker==0.0.3
 streamlit-image-coordinates==0.1.9
+streamlit-javascript==0.1.5
 streamlit-keyup==0.2.4
 streamlit-toggle-switch==1.0.2
 streamlit-vertical-slider==2.5.5
@@ -81,7 +82,9 @@ toolz==0.12.1
 tornado==6.4.1
 typing_extensions==4.12.2
 tzdata==2024.1
+ua-parser==0.18.0
 urllib3==2.2.2
+user-agents==2.2.0
 validators==0.33.0
 watchdog==4.0.1
 zipp==3.19.2
