@@ -1,6 +1,8 @@
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import json
+
 
 st.set_page_config(page_title='Image Review',layout="wide")
 
@@ -17,12 +19,6 @@ button {
 """,
     unsafe_allow_html=True,
 )
-
-# Function to authenticate and connect to Google Sheets
-import streamlit as st
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import json
 
 def connect_to_google_sheets(sheet_name):
     # Load credentials from Streamlit secrets
