@@ -43,10 +43,6 @@ def connect_to_google_sheets(sheet_name):
     sheet = client.open(sheet_name).sheet1
     return sheet
 
-# Example usage
-sheet = connect_to_google_sheets("Your Google Sheet Name")
-
-
 # Function to get the next active row
 def get_next_active_row(sheet, current_row):
     records = sheet.get_all_records(head=2)  # Read data starting from row 2
