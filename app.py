@@ -64,6 +64,7 @@ def display_row_data(sheet, row):
             ):
                 if st.button(f"Option {i + 1}", key=f"option_{i + 1}"):
                     review_notes = st.session_state.get("review_notes", "")
+                    st.session_state.review_notes = ''
                     sheet.update_cell(row, 9, review_notes)
                     sheet.update_cell(row, 7, f'image_url_{i + 1}')
                     st.session_state.active_row = get_next_active_row(sheet, row)
@@ -86,6 +87,7 @@ def display_row_data(sheet, row):
     ):
         if st.button("Reject All"):
             review_notes = st.session_state.get("review_notes", "")
+            st.session_state.review_notes = ''
             sheet.update_cell(row, 8, "REJECTED")
             sheet.update_cell(row, 9, review_notes)
             st.session_state.active_row = get_next_active_row(sheet, row)
