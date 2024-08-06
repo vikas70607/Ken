@@ -45,9 +45,13 @@ def display_row_data(sheet, row):
     data = sheet.row_values(row)
     prompt = data[0]
     image_urls = data[1:5]
-
     st.header(f"Active Row Number: {row}")
     st.subheader(f"Supposed to look like a {prompt}")
+
+    # Check if we need to clear the review notes
+    if st.session_state.get('clear_notes', False):
+        st.session_state.review_notes = ""
+        st.session_state.clear_notes = False
 
     # Display all images in a single row
     cols = st.columns(len(image_urls))
@@ -64,11 +68,10 @@ def display_row_data(sheet, row):
             ):
                 if st.button(f"Option {i + 1}", key=f"option_{i + 1}"):
                     review_notes = st.session_state.get("review_notes", "")
-                    st.session_state.review_notes = ''
                     sheet.update_cell(row, 9, review_notes)
                     sheet.update_cell(row, 7, f'image_url_{i + 1}')
                     st.session_state.active_row = get_next_active_row(sheet, row)
-                    # st.session_state.review_notes = ""
+                    st.session_state.clear_notes = True
                     if st.session_state.active_row is None:
                         st.session_state.no_records = True
                     st.rerun()
@@ -87,15 +90,13 @@ def display_row_data(sheet, row):
     ):
         if st.button("Reject All"):
             review_notes = st.session_state.get("review_notes", "")
-            st.session_state.review_notes = ''
             sheet.update_cell(row, 8, "REJECTED")
             sheet.update_cell(row, 9, review_notes)
             st.session_state.active_row = get_next_active_row(sheet, row)
-            # st.session_state.review_notes = ""
+            st.session_state.clear_notes = True
             if st.session_state.active_row is None:
                 st.session_state.no_records = True
             st.rerun()
-
 
 
 def main():
