@@ -43,8 +43,8 @@ from streamlit_extras.stylable_container import stylable_container
 
 def display_row_data(sheet, row):
     data = sheet.row_values(row)
-    prompt = data[0]
-    image_urls = data[1:5]
+    prompt = data['prompt']
+    image_urls = [data['image_url_1'],data['image_url_2'],data['image_url_3'],data['image_url_4']]  
     st.header(f"Active Row Number: {row}")
     st.subheader(f"Supposed to look like a {prompt}")
 
