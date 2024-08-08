@@ -31,6 +31,17 @@ def connect_to_google_sheets(sheet_name):
     sheet = client.open(sheet_name).sheet1
     return sheet
 
+def get_indexes(sheet):
+    prompt_index = 0
+    image_index = 0
+    records = sheet.get_all_records(head=2)
+    for i,key in enumerate(records):
+        if key[0] == 'prompt':
+           prompt_index= i
+        if key[0] == 'image_url_1':
+           image_index= i
+    return prompt_index,image_index
+ 
 # Function to get the next active row
 def get_next_active_row(sheet, current_row):
     records = sheet.get_all_records(head=2)  # Read data starting from row 2
@@ -43,8 +54,9 @@ from streamlit_extras.stylable_container import stylable_container
 
 def display_row_data(sheet, row):
     data = sheet.row_values(row)
-    prompt = data['prompt']
-    image_urls = [data['image_url_1'],data['image_url_2'],data['image_url_3'],data['image_url_4']]  
+    i,j = get_indexes(sheet)
+    prompt = data[i]
+    image_urls = data[i:i+4]
     st.header(f"Active Row Number: {row}")
     st.subheader(f"Supposed to look like a {prompt}")
 
